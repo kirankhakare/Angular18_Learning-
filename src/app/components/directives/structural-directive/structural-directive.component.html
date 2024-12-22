@@ -1,0 +1,93 @@
+<h1>This is Directives is *ngIf , *ngFor And * ngSwitch</h1>
+<h2>*ngIf Example...</h2>
+
+<!---Routing from.html routerLink---->
+<button class="btn btn-primary" [routerLink]="'/attribute-directive'">Go To Attribute Directive</button>
+<br><br>
+
+<div>
+  <div *ngIf="isDiv1Visiable">
+    <h4>Div-1</h4>
+  </div>
+  <div>
+    <button (click)="hideDiv1()">Hide</button>&nbsp;&nbsp;
+    <button (click)="showDiv1()">Show</button>
+  </div>
+  <div *ngIf="isDiv2Visiable">
+    <h4>Div-2</h4>
+  </div>
+  <div>
+    <br><br>
+    <button (click)="toggleDiv2()">Toggle</button>
+  </div>
+  <div *ngIf="num1 == num2">
+    <h4>Div3</h4>
+  </div>
+  <div>
+    <input type="text" [(ngModel)]="num1" placeholder="NUm-1"/>&nbsp;
+    <input type="text" [(ngModel)]="num2" placeholder="Num-2"/>
+  </div>
+  <div *ngIf="isActive">
+    <h4>Div4</h4>
+  </div>
+  <div>
+    <input [(ngModel)]="isActive" type="checkbox"/>
+  </div>
+  <div *ngIf="selectedState == '' ">
+    <h5>Div5</h5>
+  </div>
+  <div>
+    <select [(ngModel)]="selectedState">
+      <option value="">Select State</option>
+      <option value="India">India</option>
+      <option value="UAS">UAS</option>
+      <option value="Shrilanka">Shrilanka</option>
+    </select>
+  </div>
+  <div>
+    <h2>*ngFor Example...</h2>
+    <div>
+      <ul>
+        <li *ngFor="let city of cityArray">{{city}}</li>
+      </ul>
+    </div>
+    <div>
+      <div *ngFor="let cityname of cityArray">{{cityname}}</div>
+    </div>
+    <div>
+      <br><br>
+      <select>
+        <option *ngFor="let city of cityArray">{{city}}</option>
+      </select>
+    </div>
+    <div>
+      <select>
+        <option *ngFor="let stud of studentList" [value]="stud.studId">{{stud.name}}</option>
+      </select>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <table>
+    <thead>
+      <tr>
+        <th>Sr.No</th>
+        <th>Name</th>
+        <th>City</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let student of studentList; let srNo = index">
+        <td>{{srNo}}</td>
+        <td>{{student.name}}</td>
+        <td>{{student.city}}</td>
+        <td>{{student.isActive}}</td>
+        <td>
+          <span *ngIf="student.isActive">Active</span>
+          <span *ngIf="!student.isActive">De-Active</span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

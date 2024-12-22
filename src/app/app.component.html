@@ -1,0 +1,47 @@
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+  <div class="container-fluid d-flex gap-5">
+    <a class="navbar-brand" routerLink="home">Home</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mynavbar">
+      <ul class="navbar-nav me-auto d-flex gap-5 navbar-brand">
+        <li class="nav-item">
+          <a routerLink="data-binding">Data Binding</a>
+        </li>
+        <li>
+          <a routerLink="structural-directive">Structural Directive</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="attribute-directive">Attribute Directive</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="if-else">If-Else</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="for">For</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="switch-case">Switch</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="pipe">Pipe</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="template">Template</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="reactive">Reactive</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="api_integration">API integration</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container">
+  <router-outlet></router-outlet>
+</div>

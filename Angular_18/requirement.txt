@@ -1,0 +1,50 @@
+# Requirements
+Topics Implemented
+The project demonstrates the following Angular 18 concepts and features:
+
+# Data Binding:
+One-way Binding: Display dynamic data in templates.
+Two-way Binding: Sync data between components and the DOM using [(ngModel)].
+
+# Structural Directives:
+*ngIf, *ngElse: Conditional rendering of elements.
+*ngFor: Rendering lists dynamically.
+*ngSwitch: Implementing multiple conditional views.
+
+# Attribute Directives:
+Custom styles and behaviors applied to DOM elements.
+Example: Using ngClass and ngStyle.
+
+# Pipes:
+Built-in pipes: Formatting dates, currency, and numbers.
+Custom pipes for specific transformations.
+
+# Template-Driven Forms:
+Creating forms with minimal TypeScript code.
+Form validation using Angular's built-in validators.
+
+# Reactive Forms:
+Building forms programmatically using FormGroup and FormControl.
+Advanced validation with custom validators and asynchronous validators.
+
+# API Integration:
+Fetching and posting data using Angular's HttpClientModule.
+Error handling and loading states for API calls.
+
+# System Requirements
+
+# Development Environment:
+Node.js: v18.x or higher
+Angular CLI: v18.x or higher
+npm (Node Package Manager): v9.x or higher
+
+# Dependencies:
+@angular/core: Framework core library.
+@angular/forms: Required for Template and Reactive forms.
+@angular/common: Provides directives like ngIf, ngFor, and pipes.
+@angular/http: For handling HTTP requests.
+rxjs: Reactive extensions for Angular.
+zone.js: Required for Angular’s change detection.
+
+# Browser Requirements:
+Modern browsers like Chrome, Edge, or Firefox (latest versions).

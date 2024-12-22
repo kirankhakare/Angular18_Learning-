@@ -1,0 +1,59 @@
+<!---Head Section Here---->
+<div class="mt-2 p-2 bg-secondary text-white rounded">
+  <h1>Welcome to Pipe Topic</h1>
+  <h3>Default Pipe & Custom Pipe</h3>
+</div>
+<br><br>
+
+<!---Routing from.html routerLink---->
+<button class="btn btn-primary" [routerLink]="'/template'">Go To ControlFlow Template</button>
+<br><br>
+
+<!---Pipe Related Info Here---->
+<div class="row">
+  <div class="col-3">
+    Original Value - {{firstname}}
+    <br>
+    After Value - {{firstname | uppercase}}
+  </div>
+  <div class="col-3">
+    Original Value - {{firstname}}
+    <br>
+    After Value - {{firstname | lowercase}}
+  </div>
+  <div class="col-3">
+    Original Value - {{firstname}}
+    <br>
+    After Value - {{firstname | titlecase}}
+  </div>
+  <div class="col-3">
+    Original Value - {{currentDate}}
+    <br>
+    After Value - {{currentDate| date}}
+  </div>
+  <div class="col-3">
+    Original Value - {{currentDate |date:'dd-mm-yyyy'}}
+    <br>
+    After Value - {{currentDate | date:'dd-mm-yy'}}
+  </div>
+  <div class="col-3">
+    Original Value - {{currentDate |date:'dd-MM-yyyy'}}
+    <br>
+    After Value - {{currentDate | date:'dd-MMM-yy'}}
+  </div>
+  <div class="col-3">
+    Original Value - {{student}}
+    <br>
+    After Value - {{student|json}}
+  </div>
+  <div class="col-3">
+    Original Value - {{currentTime}}
+    <br>
+    After Value - {{currentTime|async}}
+  </div>
+  <div class="col-3">
+    Original Value - {{student.state}}
+    <br>
+    After Value - {{student.state | na}}
+  </div>
+</div>

@@ -1,0 +1,56 @@
+<h1>Onw way - from .ts to .html</h1>
+    
+<!---Routing from.html routerLink---->
+<button class="btn btn-primary" [routerLink]="'/structural-directive'">Go To Structural Directive</button>
+<br><br>
+
+  <!-----Interpolation----->
+      <div class="col-4">
+        <h1>This is Interpolation</h1>
+        <h4>{{courseName}}</h4>
+        <div>{{inputType}}</div>
+        <input type="text" value="{{courseName}}" placeholder="Enter text"/>
+        <input type="{{inputType}}"/>
+      </div>
+
+  <!-----Property Binding----->
+      <div class="col-4">
+        <h1>Property Binding</h1>
+        <div [class]="courseName">Kiran</div>
+        <input [type]="inputType"/>
+        <input type="text" [value]="courseName"/>
+      </div>  
+
+<!-----This is Event Binding--->
+  <div class="col-4">
+     <br><br>
+     <h1>Event Binding</h1>
+     <button (click)="showAlert('Welcome Angular 18..')">Show Welcome</button>
+     <br><br>
+     <button (click)="changeCoursename()">Change Course Name</button>
+  </div>
+
+<!------This is Tow Way Binding Code--->
+  <div class="col-4">
+     <br><br>
+     <h1>Two way Binding</h1>
+     <input type="text" [(ngModel)]="courseName"/> - {{courseName}}
+
+     <br><br>
+     <select [(ngModel)]="select">
+      <option value="Maharastra">Maharastra</option>
+      <option value="Goa">Goa</option>
+      <option value="Panjab">Panjab</option>
+      <option value="MP">MP</option>
+     </select>
+
+     <br><br>
+     <input type="checkbox" [(ngModel)]="isIndian"/>
+  </div>
+
+<!----This is Signal Part Code-->
+  <div class="col-4">
+    <h1>This is Signal Part</h1>
+    <h2>{{firstName()}}</h2>
+  </div>
+

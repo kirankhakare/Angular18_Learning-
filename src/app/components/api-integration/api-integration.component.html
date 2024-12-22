@@ -1,0 +1,20 @@
+<div class="mt-2 p-2 bg-secondary text-white rounded">
+  <h1>API integration</h1>
+  <p>API</p>
+</div><br>
+<!---Routing from.html routerLink---->
+<button class="btn btn-primary" [routerLink]="'/home'">Go To ControlFlow Home</button>
+<br><br>
+
+<div class="row">
+  <div class="col-2">
+    <button class="btn btn-success" (click)="getAllUser()">Get Users</button>
+  </div>
+  <div class="col-3">
+    <select class="form-select">
+      @for (item of userList; track $index){
+         <option>{{item.name}}</option>
+      }
+    </select>
+  </div>
+</div>

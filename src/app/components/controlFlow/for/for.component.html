@@ -1,0 +1,57 @@
+<h1>Welcome to Control Statement -> for</h1>
+<!---Routing from.html routerLink---->
+<button class="btn btn-primary" [routerLink]="'/switch-case'">Go To ControlFlow Switch</button>
+<br><br>
+
+<div class="row">
+  <div class="col-3">
+    <ul>
+      @for (item of cityArray; track $index){
+        <li>{{item}}</li> 
+      }
+    </ul>
+  </div>
+  <div class="col-3">
+    @for (item of cityArray; track $index){
+      <div>{{item}}</div> 
+    }
+  </div>
+  <div class="col-3">
+     <select>
+      @for (item of cityArray; track $index){
+        <option>{{item}}</option>
+      }
+     </select>
+  </div>
+  <div class="col-3">
+    <select>
+     @for (item of studentList; track $index){
+       <option [value]="item.studId">{{item.name}}</option>
+     }
+    </select>
+ </div>
+ <div class="row">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Sr.No</th>
+        <th>Name</th>
+        <th>City</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (item of studentList; track $index){
+      <tr>
+        <td>{{$index+1}}</td>
+        <td>{{item.name}}</td>
+        <td>{{item.city}}</td>
+        <td>{{item.isActive}}</td>
+      </tr>
+    }
+    </tbody>
+  </table>
+</div>
+</div>
+
+

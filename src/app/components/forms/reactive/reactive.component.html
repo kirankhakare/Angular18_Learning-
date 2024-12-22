@@ -1,0 +1,77 @@
+<div class="mt-2 p-2 bg-secondary text-white rounded">
+  <h1>Reactive Form</h1>
+  <p>Using ngModel</p>
+</div><br>
+<!---Routing from.html routerLink---->
+<button class="btn btn-primary" [routerLink]="'/api_integration'">Go To ControlFlow Home</button>
+<br><br>
+<div>
+<form class="row g-3" [formGroup]="studentForm">
+  <div class="col-md-4">
+    <label class="form-label">First name</label>
+    <input type="text" formControlName="firstName" class="form-control">
+    <div class="text-danger">
+      @if(studentForm.controls['firstName'].touched && studentForm.controls['firstName'].errors?.['required']){
+        <span>This is Required</span>
+      }
+      @else if(studentForm.controls['firstName'].touched && studentForm.controls['firstName'].errors?.['minlength']){
+        <span>Min char 4 required</span>
+      }
+    </div>
+  </div>
+  <div class="col-md-4">
+    <label class="form-label">Last name</label>
+    <input type="text" formControlName="lastName" class="form-control">
+  </div>
+
+  <div class="col-md-4">
+    <label class="form-label">Username</label>
+    <div class="input-group">
+      <span class="input-group-text" id="inputGroupPrepend"></span>
+      <input type="text" formControlName="userName" class="form-control">
+      <div class="text-danger">
+        @if(studentForm.controls['userName'].touched && studentForm.controls['userName'].errors?.['email']){
+          <span>Email Not Proper</span>
+        }
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    <label for="validationCustom03" class="form-label">City</label>
+    <input type="text" formControlName="city" class="form-control">
+  </div>
+
+  <div class="col-md-3">
+    <label for="validationCustom04" class="form-label">State</label>
+    <select  formControlName="state"  class="form-select">
+      <option selected disabled value="">Choose...</option>
+      <option>Maharastra</option>
+      <option>Goa</option>
+      <option>Panjab</option>
+      <option>Bihar</option>
+    </select>
+  </div>
+
+  <div class="col-md-3">
+    <label class="form-label">Zip</label>
+    <input type="text" formControlName="zipCode" class="form-control">
+  </div>
+
+  <div class="col-12">
+    <div class="form-check">
+      <input class="form-check-input" formControlName=" isAcceptTerms"  type="checkbox" value="" id="invalidCheck">
+      <label class="form-check-label" for="invalidCheck">
+        Agree to terms and conditions
+      </label>
+    </div>
+  </div>
+
+  <div class="col-12">
+    <button class="btn btn-primary" type="submit">Resetform</button>&nbsp;
+    <button class="btn btn-primary" type="submit" [disabled]="studentForm.invalid" (click)="onSave()">Submit form</button>
+  </div>
+</form>
+<div>
+   {{formValue | json}}
+</div>
